@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Invoice Data Extractor</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+    crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
+</head>
+<body>
+    <div class="content" style="display: block; margin-top: 40px; margin-bottom: 40px">
+        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 form-group" style="display: flex">
+            <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3 form-group">
+                <div class="form-group">
+                    <form action = "/test_extraction" method = "post" enctype="multipart/form-data">
+                        <input type="file" name="file" webkitdirectory/>
+                        <input type="button" class="btn btn-primary" id="btnSubmit" value="Upload">
+                    </form>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 form-group">
+                <div class="progress" style="visibility: hidden; height: 40px">
+                    <div id="progressBar" class="progress-bar" role="progressbar" aria-valuenow="0"
+                         aria-valuemin="0" aria-valuemax="100" style="width: 0">
+                        0%
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 form-group">
+            <div class="form-group" style="width: 50%">
+                <label for="p_file_names"></label>
+                <select class="form-control" id="p_file_names" name="p_file_names" onchange="showResult()">
+                    <option value="0">Select PDF file</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 form-group">
+            <div class="row">
+                <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                    <img src="" id="pdf_image" alt="" style="height: 100%; width: 100%; visibility: hidden">
+                </div>
+                <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                    <ul id="result" style="font-size: 24px; list-style-type: none; visibility: hidden; margin-top: 10px">
+                        <li id="barcode"></li>
+                        <li id="liefer"></li>
+                        <li id="date"></li>
+                        <li id="time"></li>
+                        <li id="gew"></li>
+                        <li id="volume"></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
+<script src="../static/js/update.js"></script>
+<script type="text/javascript">
+    let res_data = {{ response | tojson }}
+</script>
+</html>

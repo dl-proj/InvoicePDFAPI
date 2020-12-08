@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Invoice Extractor</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&amp;subset=latin-ext" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="screen" href="{{url_for('static', filename = 'style.css')}}"/>
+
+</head>
+<body>
+<div class="login-container d-flex justify-content-center align-items-center">
+    <div class="login-content">
+        <img class="logo" src="{{url_for('static', filename = '/img/invoice.png')}}" alt="Re:config">
+        <p class="text-center mt-4 mb-5"></p>
+        <form id="login" class="login-form text-center" action="/" method="POST">
+            <div class="form-group">
+                <input type="text" id="username" name="username" placeholder="Username" required>
+                <input type="password" id="pass" name="password" placeholder="Password" minlength="8" required>
+            </div>
+            <button type="submit" class="form-group">Login
+                <svg width="18px" height="13px" viewBox="0 0 18 13">
+                    <g class="button__icon button__icon-blue">
+                        <path d="M12.1209908,0.195510794 C11.8757701,-0.0651702647 11.4676405,-0.0651702647 11.2138457,0.195510794 C10.968625,0.44738506 10.968625,0.866588384 11.2138457,1.11787553 L15.8135916,5.84242616 L0.635058749,5.84242616 C0.281232137,5.84301328 0,6.13187607 0,6.49530304 C0,6.85873002 0.281232137,7.15698672 0.635058749,7.15698672 L15.8135916,7.15698672 L11.2138457,11.8727306 C10.968625,12.1334116 10.968625,12.5532021 11.2138457,12.8044892 C11.4676405,13.0651703 11.8763417,13.0651703 12.1209908,12.8044892 L17.8096539,6.96147593 C18.0634487,6.70960166 18.0634487,6.29039834 17.8096539,6.03911119 L12.1209908,0.195510794 Z"
+                              id="Arrow"></path>
+                    </g>
+                </svg>
+            </button>
+        </form>
+    </div>
+</div>
+<!-- particles.js container -->
+<div id="particles-js"></div>
+
+<!-- scripts -->
+<script src="{{url_for('static', filename = '/js/particles.js')}}"></script>
+<script src="{{url_for('static', filename = '/js/functions.js')}}"></script>
+<script src="{{url_for('static', filename = '/js/particles-setings.js')}}"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+</body>
+</html> 
